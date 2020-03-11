@@ -1,0 +1,15 @@
+syntax="proto3";
+package grpc.findmaximum.v1;
+option java_package="grpc.findmaximum.v1";
+option java_multiple_files=true;
+message maximumRequest{
+    int32 number=1;
+}
+message maximumResponse{
+    int32 number=1;
+}
+
+// Bi-Directional Streaming RPC Service
+service maximumService{
+    rpc findMaximum(stream maximumRequest) returns (stream maximumResponse){};
+}
